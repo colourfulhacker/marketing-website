@@ -179,9 +179,19 @@ const SalesGuide: NextPage = () => {
     <Layout>
       <div style={{ minHeight: "100vh", position: "relative" }}>
         <Head>
-          <title>Sales Excellence Guide | Cehpoint Technology Sales Training</title>
-          <meta name="description" content="Comprehensive guide for Cehpoint sales professionals covering modern technologies, sales strategies, and best practices for IT services." />
+          <title>Sales Excellence Guide - Technology Sales Training | Cehpoint</title>
+          <meta name="description" content="Comprehensive sales guide for Cehpoint professionals covering Next.js, cybersecurity, AI solutions, and proven sales strategies for technology services." />
+          <meta name="keywords" content="technology sales guide, IT services sales, cybersecurity sales, AI solutions sales, sales training, B2B sales strategies" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="noindex, nofollow" />
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+          <link rel="alternate icon" href="/favicon.ico" />
+          
+          <meta property="og:title" content="Sales Excellence Guide | Cehpoint" />
+          <meta property="og:description" content="Master technology sales with our comprehensive training guide covering modern web technologies and proven sales strategies." />
+          <meta property="og:type" content="article" />
+          
+          <link rel="canonical" href="http://marketing-jobs.cehpoint.co.in/sales-guide" />
         </Head>
 
         <main style={{ padding: "6rem 0" }}>

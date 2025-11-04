@@ -551,9 +551,24 @@ const SalaryCalculator: NextPage = () => {
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
       <Head>
-        <title>Salary Calculator | Cehpoint Careers</title>
-        <meta name="description" content="Calculate your potential salary at Cehpoint based on your experience, skills, and qualifications. Advanced target-based compensation calculator." />
-        <meta name="viewport" content="width=1024" />
+        <title>Salary Calculator - Estimate Your Potential Earnings | Cehpoint Careers</title>
+        <meta name="description" content="Calculate your potential salary at Cehpoint based on your experience, skills, and qualifications. Results-driven compensation calculator for technology sales and marketing professionals." />
+        <meta name="keywords" content="salary calculator, cehpoint salary, tech sales salary india, marketing salary calculator, commission calculator, earnings calculator" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        
+        <meta property="og:title" content="Salary Calculator - Estimate Your Earnings at Cehpoint" />
+        <meta property="og:description" content="Calculate your potential earnings as a technology sales or marketing professional at Cehpoint. Results-based compensation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://marketing-jobs.cehpoint.co.in/salary-calculator" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Salary Calculator | Cehpoint" />
+        <meta name="twitter:description" content="Calculate your potential earnings based on your skills and experience." />
+        
+        <link rel="canonical" href="http://marketing-jobs.cehpoint.co.in/salary-calculator" />
       </Head>
 
       <motion.div

@@ -500,6 +500,111 @@ select:focus {
   backdrop-filter: blur(20px);
 }
 
+/* Card styles for theme support */
+.card {
+  background: linear-gradient(135deg, rgba(23, 23, 35, 0.8) 0%, rgba(30, 30, 45, 0.7) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 247, 255, 0.98) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+}
+
+.service-card {
+  background: linear-gradient(135deg, rgba(23, 23, 35, 0.8) 0%, rgba(30, 30, 45, 0.7) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .service-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 247, 255, 0.98) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+}
+
+.job-card {
+  background: linear-gradient(135deg, rgba(23, 23, 35, 0.8) 0%, rgba(30, 30, 45, 0.7) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .job-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 247, 255, 0.98) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+}
+
+.card-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .card-divider {
+  border-top: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+.card-section {
+  background: rgba(23, 23, 35, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .card-section {
+  background: rgba(250, 247, 255, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.toggle-section {
+  background: rgba(23, 23, 35, 0.6);
+}
+
+[data-theme="light"] .toggle-section {
+  background: rgba(250, 247, 255, 0.9);
+}
+
+.expand-button {
+  background: rgba(30, 30, 45, 0.6);
+}
+
+[data-theme="light"] .expand-button {
+  background: rgba(250, 247, 255, 0.9);
+}
+
+[data-theme="light"] .expand-button:hover {
+  background: rgba(240, 237, 255, 1);
+}
+
+.expandable-content {
+  background: rgba(23, 23, 35, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .expandable-content {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+.secondary-button {
+  background: rgba(30, 30, 45, 0.8);
+}
+
+[data-theme="light"] .secondary-button {
+  background: rgba(250, 247, 255, 0.9);
+}
+
+[data-theme="light"] .secondary-button:hover {
+  background: rgba(240, 237, 255, 1) !important;
+}
+
+.global-section {
+  background: linear-gradient(180deg, rgba(15, 15, 25, 0.5) 0%, rgba(10, 10, 15, 0.8) 100%);
+}
+
+[data-theme="light"] .global-section {
+  background: linear-gradient(180deg, rgba(250, 247, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 0 1.5rem;

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: http://marketing-jobs.cehpoint.co.in/sitemap.xml

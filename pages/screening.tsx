@@ -287,7 +287,7 @@ const Screening: NextPage = () => {
     if (partner) {
       setPartnershipType(partner as string);
     }
-  }, [router.isReady, router.query]);
+  }, [router]);
 
   const handleAnswer = (answer: string) => {
     const questions = getScreeningQuestions();
@@ -326,6 +326,10 @@ const Screening: NextPage = () => {
         <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
           <Head>
             <title>Application Not Proceeding - Cehpoint Careers</title>
+            <meta name="robots" content="noindex, nofollow" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+            <link rel="alternate icon" href="/favicon.ico" />
           </Head>
 
           <motion.div
@@ -360,7 +364,7 @@ const Screening: NextPage = () => {
             }}>
               <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: "1.6" }}>
                 <strong style={{ color: "var(--primary)" }}>Why this matters:</strong><br />
-                At Cehpoint, we operate on a results-driven, value-creation model. Our team members sell products and services to clients - not their time to the company. If you're looking for a traditional 9-5 job with fixed salary regardless of performance, this might not be the right fit.
+                At Cehpoint, we operate on a results-driven, value-creation model. Our team members sell products and services to clients - not their time to the company. If you&apos;re looking for a traditional 9-5 job with fixed salary regardless of performance, this might not be the right fit.
               </p>
             </div>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
@@ -388,7 +392,13 @@ const Screening: NextPage = () => {
       <Layout>
         <div style={{ minHeight: "100vh", padding: "6rem 2rem 4rem" }}>
           <Head>
-            <title>Review Terms - Cehpoint Careers</title>
+            <title>Review Terms & Expectations - Cehpoint Careers</title>
+            <meta name="description" content="Review role expectations, responsibilities, and terms before completing your Cehpoint application." />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+            <link rel="alternate icon" href="/favicon.ico" />
+            <link rel="canonical" href="http://marketing-jobs.cehpoint.co.in/screening" />
           </Head>
 
           <div className="container" style={{ maxWidth: "900px" }}>
@@ -464,7 +474,7 @@ const Screening: NextPage = () => {
 
                 <div style={{ marginBottom: "2rem" }}>
                   <h4 style={{ fontSize: "1.125rem", fontWeight: "700", marginBottom: "1rem", color: "var(--text)" }}>
-                    ✅ What You'll Get
+                    ✅ What You&apos;ll Get
                   </h4>
                   <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                     {terms.whatYouGet.map((item: string, idx: number) => (
@@ -516,7 +526,7 @@ const Screening: NextPage = () => {
                       style={{ marginTop: "0.25rem", width: "20px", height: "20px", cursor: "pointer" }}
                     />
                     <label htmlFor="termsAccept" style={{ fontSize: "1rem", color: "var(--text)", lineHeight: "1.6", cursor: "pointer" }}>
-                      <strong>I have read and understood all responsibilities and expectations.</strong> I confirm that I understand this is a results-driven role focused on selling Cehpoint's products and services to clients. I agree to the performance goals and commit to creating value for clients.
+                      <strong>I have read and understood all responsibilities and expectations.</strong> I confirm that I understand this is a results-driven role focused on selling Cehpoint&apos;s products and services to clients. I agree to the performance goals and commit to creating value for clients.
                     </label>
                   </div>
                 </div>
@@ -549,7 +559,12 @@ const Screening: NextPage = () => {
     <Layout>
       <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
         <Head>
-          <title>Application Screening - Cehpoint Careers</title>
+          <title>Application Screening Questions - Cehpoint Careers</title>
+          <meta name="description" content="Answer screening questions to ensure role alignment. Transparent assessment of mindset and business model fit." />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="robots" content="noindex, nofollow" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="canonical" href="https://marketing-jobs.cehpoint.co.in/screening" />
         </Head>
 
         <div className="container" style={{ maxWidth: "800px" }}>
@@ -621,7 +636,7 @@ const Screening: NextPage = () => {
                         className="btn btn-ghost"
                         style={{ justifyContent: "center", fontSize: "1.125rem", padding: "1.25rem" }}
                       >
-                        ✗ No, this doesn't align with me
+                        ✗ No, this doesn&apos;t align with me
                       </button>
                     </>
                   )}

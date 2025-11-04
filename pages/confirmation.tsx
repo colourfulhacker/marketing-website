@@ -38,9 +38,14 @@ const Confirmation: NextPage = () => {
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
       <Head>
-        <title>Application Submitted | Cehpoint</title>
-        <meta name="viewport" content="width=1024" />
-        <meta name="robots" content="noindex" />
+        <title>Application Submitted Successfully | Cehpoint Careers</title>
+        <meta name="description" content="Your application has been submitted successfully. Redirecting you to WhatsApp to complete your application process." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        
+        <link rel="canonical" href="http://marketing-jobs.cehpoint.co.in/confirmation" />
       </Head>
 
       <motion.div

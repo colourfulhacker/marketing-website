@@ -90,7 +90,8 @@ const PartnerProgram: NextPage = () => {
           <title>Partner Program - Become a Cehpoint Consultant | Earn High Commissions</title>
           <meta name="description" content="Join Cehpoint's partner program. Get 3-hour training and start earning the same day. Freelancers, agents, and sales partners welcome. Earn from ₹1,000 per project to 20% profit share." />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
         </Head>
 
         <main>

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -42,11 +43,12 @@ const Home: NextPage = () => {
     <Layout>
       <div style={{ minHeight: "100vh", position: "relative" }}>
       <Head>
-        <title>Cehpoint Jobs in West Bengal & India | Digital Marketing, Sales, Business Development Careers 2024</title>
+        <title>Cehpoint Jobs in West Bengal & India | Digital Marketing, Sales, Business Development Careers 2025</title>
         <meta name="description" content="Apply for top jobs in West Bengal, Kolkata, India at Cehpoint. Hiring Digital Marketing Lead, Growth Strategist, Business Development Executive, Sales Development Representative. Join India's leading technology solutions company." />
         <meta name="keywords" content="jobs in west bengal, jobs in kolkata, jobs in india, digital marketing jobs, sales jobs india, business development jobs, technology sales jobs, marketing jobs west bengal, cybersecurity sales jobs, IT sales jobs india, startup jobs india, work from home jobs india" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
         
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Cehpoint" />
@@ -58,14 +60,19 @@ const Home: NextPage = () => {
         <meta property="og:title" content="Cehpoint Jobs - Digital Marketing, Sales & Business Development in West Bengal & India" />
         <meta property="og:description" content="Join Cehpoint's elite team. Apply for Digital Marketing Lead, Sales Development, Business Development positions. Technology sales & marketing careers in India." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://marketing-jobs.cehpoint.co.in" />
+        <meta property="og:image" content="http://marketing-jobs.cehpoint.co.in/images/team-hero.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="Cehpoint Careers" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Cehpoint Jobs in West Bengal & India | Apply Now" />
         <meta name="twitter:description" content="Premium technology sales & marketing careers. Digital Marketing, Business Development, Sales positions available." />
+        <meta name="twitter:image" content="http://marketing-jobs.cehpoint.co.in/images/team-hero.jpg" />
         
-        <link rel="canonical" href="https://marketing-jobs.cehpoint.co.in" />
+        <link rel="canonical" href="http://marketing-jobs.cehpoint.co.in" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -73,12 +80,12 @@ const Home: NextPage = () => {
             "@type": "JobPosting",
             "title": "Multiple Positions Available",
             "description": "Cehpoint is hiring for Digital Marketing Lead, Growth Strategist, Business Development Executive, Sales Development Representative, and more positions in West Bengal and across India.",
-            "datePosted": "2024-05-29",
+            "datePosted": "2025-11-04",
             "hiringOrganization": {
               "@type": "Organization",
               "name": "Cehpoint",
-              "sameAs": "https://marketing-jobs.cehpoint.co.in",
-              "logo": "https://marketing-jobs.cehpoint.co.in/favicon.ico"
+              "sameAs": "http://marketing-jobs.cehpoint.co.in",
+              "logo": "http://marketing-jobs.cehpoint.co.in/favicon.svg"
             },
             "jobLocation": {
               "@type": "Place",
@@ -333,6 +340,36 @@ const Home: NextPage = () => {
                   🎓 Sales Guide
                 </motion.button>
               </motion.div>
+
+              {/* Professional Team Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.8 }}
+                style={{
+                  marginTop: "4rem",
+                  maxWidth: "900px",
+                  margin: "4rem auto 0",
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                  boxShadow: "0 20px 60px rgba(124, 58, 237, 0.25)",
+                  border: "1px solid rgba(167, 139, 250, 0.2)",
+                  position: "relative"
+                }}
+              >
+                <Image 
+                  src="/images/team-hero.jpg" 
+                  alt="Cehpoint Professional Team - Join our elite technology sales and marketing team"
+                  width={1200}
+                  height={800}
+                  priority
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block"
+                  }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -402,11 +439,9 @@ const Home: NextPage = () => {
                   variants={itemVariants}
                   onHoverStart={() => setHoveredService(index)}
                   onHoverEnd={() => setHoveredService(null)}
+                  className="service-card"
                   style={{
-                    background: "linear-gradient(135deg, rgba(23, 23, 35, 0.8) 0%, rgba(30, 30, 45, 0.7) 100%)",
-                    backdropFilter: "blur(20px)",
                     borderRadius: "20px",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
                     padding: "2rem",
                     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     position: "relative",
@@ -465,8 +500,7 @@ const Home: NextPage = () => {
                       {service.description}
                     </p>
                     
-                    <div style={{
-                      borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+                    <div className="card-divider" style={{
                       paddingTop: "1rem",
                       marginTop: "1rem",
                       marginBottom: "1rem"
@@ -808,9 +842,8 @@ const Home: NextPage = () => {
                       )}
                     </div>
                     
-                    <div style={{
+                    <div className="toggle-section" style={{
                       display: "inline-flex",
-                      background: "rgba(23, 23, 35, 0.6)",
                       border: "1px solid rgba(167, 139, 250, 0.2)",
                       borderRadius: "10px",
                       padding: "0.35rem",
@@ -942,10 +975,10 @@ const Home: NextPage = () => {
                         e.stopPropagation();
                         setExpandedJob(expandedJob === index ? null : index);
                       }}
+                      className="expand-button"
                       style={{
                         width: "100%",
                         padding: "0.875rem",
-                        background: "rgba(30, 30, 45, 0.6)",
                         border: "1px solid rgba(167, 139, 250, 0.2)",
                         borderRadius: "10px",
                         color: "var(--text)",
@@ -959,7 +992,6 @@ const Home: NextPage = () => {
                         marginBottom: "1rem",
                         transition: "all 0.3s"
                       }}
-                      whileHover={{ background: "rgba(40, 40, 55, 0.8)" }}
                     >
                       {expandedJob === index ? "Hide" : "View"} Roles & Responsibilities
                       <motion.svg
@@ -984,11 +1016,9 @@ const Home: NextPage = () => {
                           transition={{ duration: 0.3 }}
                           style={{ overflow: "hidden", marginBottom: "1.5rem" }}
                         >
-                          <div style={{
-                            background: "rgba(23, 23, 35, 0.8)",
+                          <div className="expandable-content" style={{
                             borderRadius: "12px",
-                            padding: "1.25rem",
-                            border: "1px solid rgba(255, 255, 255, 0.08)"
+                            padding: "1.25rem"
                           }}>
                             <h4 style={{
                               fontSize: "1rem",
@@ -1168,11 +1198,11 @@ const Home: NextPage = () => {
                       
                       <motion.button
                         onClick={() => handleApply(job.title, true)}
+                        className="secondary-button"
                         style={{
                           flex: 1,
                           minWidth: "140px",
                           padding: "0.875rem 1.25rem",
-                          background: "rgba(30, 30, 45, 0.8)",
                           border: "2px solid rgba(236, 72, 153, 0.3)",
                           borderRadius: "10px",
                           color: "var(--text)",
@@ -1186,7 +1216,6 @@ const Home: NextPage = () => {
                           gap: "0.5rem"
                         }}
                         whileHover={{ 
-                          background: "rgba(45, 45, 65, 0.9)",
                           borderColor: "rgba(236, 72, 153, 0.5)"
                         }}
                         whileTap={{ scale: 0.98 }}
@@ -1217,10 +1246,9 @@ const Home: NextPage = () => {
         </section>
 
         {/* Global Presence Section */}
-        <section style={{
+        <section className="global-section" style={{
           padding: "6rem 0",
-          position: "relative",
-          background: "linear-gradient(180deg, rgba(15, 15, 25, 0.5) 0%, rgba(10, 10, 15, 0.8) 100%)"
+          position: "relative"
         }}>
           <div className="container">
             <motion.div
@@ -1305,11 +1333,8 @@ const Home: NextPage = () => {
                   className="card"
                   whileHover={{ y: -5 }}
                   style={{
-                    background: "linear-gradient(135deg, rgba(23, 23, 35, 0.8) 0%, rgba(30, 30, 45, 0.7) 100%)",
-                    backdropFilter: "blur(20px)",
                     padding: "2rem",
                     borderRadius: "16px",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
                     transition: "all 0.3s ease"
                   }}
                 >

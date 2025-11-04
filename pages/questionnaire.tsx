@@ -1443,10 +1443,19 @@ ${base64Data}`;
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
       <Head>
-        <title>Application for {job} | Cehpoint</title>
-        <meta name="description" content="Apply for {job} position at Cehpoint. Fill out the questionnaire to submit your application." />
-        <meta name="keywords" content="{job} application, Cehpoint careers, job questionnaire, apply online" />
-        <meta name="viewport" content="width=1024" />
+        <title>Application for {job} | Cehpoint Careers</title>
+        <meta name="description" content={`Apply for ${job} position at Cehpoint. Complete our application questionnaire to join India's leading technology solutions company.`} />
+        <meta name="keywords" content={`${job} application, Cehpoint careers, job questionnaire, apply online, technology jobs india`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        
+        <meta property="og:title" content={`Application for ${job} | Cehpoint`} />
+        <meta property="og:description" content="Complete your job application questionnaire to join our elite team." />
+        <meta property="og:type" content="website" />
+        
+        <link rel="canonical" href="http://marketing-jobs.cehpoint.co.in/questionnaire" />
       </Head>
 
       <motion.div
