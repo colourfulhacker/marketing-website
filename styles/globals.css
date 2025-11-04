@@ -192,6 +192,23 @@ select {
   box-shadow: 0 12px 32px rgba(124, 58, 237, 0.25);
 }
 
+/* Responsive quiz option styling */
+@media (max-width: 768px) {
+  .btn-secondary {
+    font-size: 0.95rem;
+    padding: 1rem 1.25rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.875rem 1rem;
+    min-height: 45px;
+  }
+}
+
 .btn:active {
   transform: translateY(-1px) scale(0.98);
 }

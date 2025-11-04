@@ -1239,10 +1239,22 @@ const EmployeeQuiz: NextPage = () => {
                         cursor: showFeedback ? "default" : "pointer",
                         position: "relative",
                         paddingRight: "3rem",
-                        lineHeight: 1.6
+                        lineHeight: 1.6,
+                        whiteSpace: "normal",
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        minHeight: "60px",
+                        display: "flex",
+                        alignItems: "center",
+                        width: "100%"
                       }}
                     >
-                      {option}
+                      <span style={{ 
+                        display: "block",
+                        width: "100%"
+                      }}>
+                        {option}
+                      </span>
                       {showCorrect && (
                         <span style={{
                           position: "absolute",
