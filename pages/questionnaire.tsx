@@ -25,6 +25,24 @@ const positionQuestions: Record<string, Question[]> = {
       scoreWeight: 0
     },
     {
+      id: "nextjs_knowledge",
+      question: "What is the primary client benefit of using Next.js for web applications?",
+      type: "select",
+      options: [
+        "Faster loading websites with better SEO and scalability",
+        "Lower development costs",
+        "Easier to learn than other frameworks",
+        "Works only on mobile devices"
+      ],
+      scoreWeight: 2
+    },
+    {
+      id: "sales_guide_familiarity",
+      question: "Have you reviewed our Sales Excellence Guide to understand the technologies we offer?",
+      type: "yes-no",
+      scoreWeight: 1
+    },
+    {
       id: "digital_campaigns",
       question: "Have you successfully managed paid digital marketing campaigns (Google Ads, Facebook Ads, LinkedIn Ads) with measurable ROI?",
       type: "yes-no",
@@ -102,6 +120,24 @@ const positionQuestions: Record<string, Question[]> = {
         "I come here to sell my time to the company"
       ],
       scoreWeight: 0
+    },
+    {
+      id: "tech_knowledge",
+      question: "Which technology would you recommend to a client who needs secure, real-time database with full data ownership?",
+      type: "select",
+      options: [
+        "Supabase with PostgreSQL",
+        "Microsoft Excel",
+        "Google Docs",
+        "WordPress"
+      ],
+      scoreWeight: 2
+    },
+    {
+      id: "sales_guide_familiarity",
+      question: "Have you reviewed our Sales Excellence Guide to understand the technologies and sales strategies we use?",
+      type: "yes-no",
+      scoreWeight: 1
     },
     {
       id: "b2b_sales",
@@ -570,7 +606,10 @@ const positionQuestions: Record<string, Question[]> = {
 
 const Questionnaire: NextPage = () => {
   const router = useRouter();
-  const { job } = router.query;
+  const { job, type } = router.query;
+  const applicationType = (type as string) || 'full-time';
+  const isInternship = applicationType === 'internship';
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, any>>({});
   const [textInput, setTextInput] = useState("");
@@ -587,6 +626,11 @@ const Questionnaire: NextPage = () => {
     let totalScore = 0;
     let maxScore = 0;
 
+    const correctAnswers: Record<string, string> = {
+      "nextjs_knowledge": "Faster loading websites with better SEO and scalability",
+      "tech_knowledge": "Supabase with PostgreSQL"
+    };
+
     questions.forEach((q) => {
       if (q.scoreWeight && q.scoreWeight > 0) {
         maxScore += q.scoreWeight;
@@ -602,6 +646,11 @@ const Questionnaire: NextPage = () => {
           else if (expValue === "2-4 years") totalScore += q.scoreWeight * 0.75;
           else if (expValue === "1-2 years") totalScore += q.scoreWeight * 0.5;
           else if (expValue === "0-1 years") totalScore += q.scoreWeight * 0.25;
+        } else if (q.type === "select" && correctAnswers[q.id]) {
+          // Check if the answer matches the correct answer for knowledge questions
+          if (answer === correctAnswers[q.id]) {
+            totalScore += q.scoreWeight;
+          }
         }
       }
     });
@@ -690,6 +739,7 @@ const Questionnaire: NextPage = () => {
     }
     const applicationData = {
       job: job as string,
+      applicationType: applicationType,
       answers: finalAnswers,
       score: candidateScore,
       timestamp: new Date().toISOString()
@@ -712,13 +762,13 @@ const Questionnaire: NextPage = () => {
       console.error('Failed to send application data to WhatsApp system:', error);
     }
     
-    const message = `*New Job Application - Cehpoint*
+    const message = `*New ${isInternship ? 'Internship' : 'Job'} Application - Cehpoint*
 
-*Position:* ${job}
+*Position:* ${job} (${isInternship ? 'Internship' : 'Full-Time'})
 *Name:* ${finalAnswers.name}
 *Email:* ${finalAnswers.email}
 *Phone:* ${finalAnswers.phone}
-*Salary Expectation:* ₹${finalAnswers.salary_expectation} per month
+*${isInternship ? 'Stipend' : 'Salary'} Expectation:* ₹${finalAnswers.salary_expectation} per month
 
 ---
 *Application Data (DO NOT MODIFY):*
@@ -730,6 +780,7 @@ ${base64Data}`;
   const acceptProbation = () => {
     const applicationData = {
       job: job as string,
+      applicationType: applicationType,
       answers,
       score: candidateScore,
       probationAccepted: true,
@@ -741,7 +792,7 @@ ${base64Data}`;
     
     const message = `*Probation Application - Cehpoint*
 
-*Position:* ${job}
+*Position:* ${job} (${isInternship ? 'Internship' : 'Full-Time'})
 *Name:* ${answers.name}
 *Email:* ${answers.email}
 *Phone:* ${answers.phone}
@@ -1357,7 +1408,9 @@ ${base64Data}`;
                   color: "var(--text)",
                   lineHeight: 1.4
                 }}>
-                  {question.question}
+                  {question.id === 'salary_expectation' && isInternship 
+                    ? question.question.replace('salary', 'stipend')
+                    : question.question}
                 </h2>
 
                 {question.type === "yes-no" && (

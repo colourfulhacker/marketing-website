@@ -12,6 +12,8 @@ const Home: NextPage = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [expandedServiceBenefits, setExpandedServiceBenefits] = useState<number | null>(null);
+  const [jobViewMode, setJobViewMode] = useState<Record<number, 'full-time' | 'intern'>>({});
 
   const handleApply = (jobTitle: string, isInternship: boolean = false) => {
     const applicationType = isInternship ? 'internship' : 'full-time';
@@ -181,7 +183,7 @@ const Home: NextPage = () => {
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text"
                 }}>
-                  🚀 We&apos;re Hiring Top Talent
+                  🚀 Marketing & Business Development Opportunities - Join Our Growing Team
                 </span>
               </motion.div>
 
@@ -213,7 +215,7 @@ const Home: NextPage = () => {
                   fontWeight: 400
                 }}
               >
-                Empowering Businesses Through Results-Driven Innovation
+                Launch Your Marketing Career Where Innovation Meets Opportunity
               </motion.p>
               
               <motion.p
@@ -227,7 +229,7 @@ const Home: NextPage = () => {
                   lineHeight: 1.7
                 }}
               >
-                Join India&apos;s Most Ambitious Technology Company — Where Value Creators Thrive
+                Build your skills, drive real results, and grow your career with India&apos;s ambitious technology company. We offer both full-time positions and internships tailored to your experience level.
               </motion.p>
 
               <motion.div
@@ -323,12 +325,12 @@ const Home: NextPage = () => {
                 </motion.button>
                 <motion.button
                   className="btn btn-secondary"
-                  onClick={() => router.push('/salary-calculator')}
+                  onClick={() => router.push('/sales-guide')}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  style={{ fontSize: "1.1rem" }}
+                  style={{ fontSize: "1.1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}
                 >
-                  💰 Salary Calculator
+                  🎓 Sales Guide
                 </motion.button>
               </motion.div>
             </motion.div>
@@ -546,38 +548,135 @@ const Home: NextPage = () => {
                         </p>
                       </div>
                       
-                      <div style={{
-                        background: "linear-gradient(135deg, rgba(236, 72, 153, 0.12) 0%, rgba(124, 58, 237, 0.12) 100%)",
-                        borderRadius: "10px",
-                        padding: "1rem",
-                        border: "1px solid rgba(236, 72, 153, 0.2)"
-                      }}>
-                        <div style={{
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
-                          color: "#EC4899",
-                          marginBottom: "0.5rem",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.05em",
+                      <motion.button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedServiceBenefits(expandedServiceBenefits === index ? null : index);
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        style={{
+                          width: "100%",
+                          background: "linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%)",
+                          border: "1px solid rgba(124, 58, 237, 0.3)",
+                          borderRadius: "10px",
+                          padding: "0.875rem 1rem",
+                          color: "var(--primary-light)",
+                          fontWeight: 600,
+                          fontSize: "0.9rem",
+                          cursor: "pointer",
+                          transition: "all 0.3s ease",
                           display: "flex",
                           alignItems: "center",
-                          gap: "0.35rem"
-                        }}>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                          Earning Potential
-                        </div>
-                        <p style={{
-                          fontSize: "0.9rem",
-                          color: "var(--text)",
-                          lineHeight: 1.5,
-                          margin: 0,
-                          fontWeight: 700
-                        }}>
-                          {service.earnings}
-                        </p>
-                      </div>
+                          justifyContent: "center",
+                          gap: "0.5rem"
+                        }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 10H3M21 6H3M21 14H3M21 18H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        {expandedServiceBenefits === index ? "Hide" : "View"} Benefits Package
+                        <svg 
+                          width="14" 
+                          height="14" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          xmlns="http://www.w3.org/2000/svg"
+                          style={{
+                            transform: expandedServiceBenefits === index ? "rotate(180deg)" : "rotate(0deg)",
+                            transition: "transform 0.3s ease"
+                          }}
+                        >
+                          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </motion.button>
+                      
+                      <AnimatePresence>
+                        {expandedServiceBenefits === index && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            style={{ overflow: "hidden", marginTop: "0.75rem" }}
+                          >
+                            <div style={{
+                              background: "rgba(124, 58, 237, 0.08)",
+                              borderRadius: "10px",
+                              padding: "1rem",
+                              border: "1px solid rgba(124, 58, 237, 0.15)"
+                            }}>
+                              <p style={{
+                                fontSize: "0.75rem",
+                                color: "var(--text-muted)",
+                                marginBottom: "0.75rem",
+                                lineHeight: 1.5
+                              }}>
+                                <strong style={{ color: "var(--text)" }}>Compensation Structure:</strong> Fixed salary based on role + performance-based weekly incentives
+                              </p>
+                              <div style={{
+                                background: "rgba(16, 185, 129, 0.1)",
+                                borderRadius: "8px",
+                                padding: "0.75rem",
+                                marginBottom: "0.5rem"
+                              }}>
+                                <div style={{
+                                  fontSize: "0.7rem",
+                                  fontWeight: 700,
+                                  color: "#10B981",
+                                  marginBottom: "0.4rem",
+                                  textTransform: "uppercase",
+                                  letterSpacing: "0.05em"
+                                }}>
+                                  Weekly Incentive Potential
+                                </div>
+                                <p style={{
+                                  fontSize: "0.85rem",
+                                  color: "var(--text-secondary)",
+                                  margin: 0,
+                                  lineHeight: 1.4
+                                }}>
+                                  Based on sales: {service.commissionRate}
+                                </p>
+                              </div>
+                              <div style={{
+                                background: "rgba(236, 72, 153, 0.1)",
+                                borderRadius: "8px",
+                                padding: "0.75rem"
+                              }}>
+                                <div style={{
+                                  fontSize: "0.7rem",
+                                  fontWeight: 700,
+                                  color: "#EC4899",
+                                  marginBottom: "0.4rem",
+                                  textTransform: "uppercase",
+                                  letterSpacing: "0.05em"
+                                }}>
+                                  Target Monthly Additional Income
+                                </div>
+                                <p style={{
+                                  fontSize: "0.85rem",
+                                  color: "var(--text-secondary)",
+                                  margin: 0,
+                                  lineHeight: 1.4
+                                }}>
+                                  {service.potentialMonthlyEarning}
+                                </p>
+                              </div>
+                              <p style={{
+                                fontSize: "0.7rem",
+                                color: "var(--text-muted)",
+                                marginTop: "0.75rem",
+                                marginBottom: 0,
+                                lineHeight: 1.4,
+                                fontStyle: "italic"
+                              }}>
+                                * Incentives are in addition to your base salary and are calculated weekly based on performance metrics
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   </div>
                 </motion.div>
@@ -675,7 +774,7 @@ const Home: NextPage = () => {
                       display: "flex", 
                       justifyContent: "space-between", 
                       alignItems: "flex-start",
-                      marginBottom: "1.5rem"
+                      marginBottom: "1rem"
                     }}>
                       <span style={{
                         padding: "0.5rem 1rem",
@@ -707,6 +806,69 @@ const Home: NextPage = () => {
                           {job.badge}
                         </span>
                       )}
+                    </div>
+                    
+                    <div style={{
+                      display: "inline-flex",
+                      background: "rgba(23, 23, 35, 0.6)",
+                      border: "1px solid rgba(167, 139, 250, 0.2)",
+                      borderRadius: "10px",
+                      padding: "0.35rem",
+                      marginBottom: "1.5rem",
+                      alignSelf: "flex-start"
+                    }}>
+                      <motion.button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setJobViewMode(prev => ({ ...prev, [index]: 'full-time' }));
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        style={{
+                          padding: "0.5rem 1rem",
+                          background: (jobViewMode[index] || 'full-time') === 'full-time' 
+                            ? "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)" 
+                            : "transparent",
+                          border: "none",
+                          borderRadius: "7px",
+                          color: (jobViewMode[index] || 'full-time') === 'full-time' ? "white" : "var(--text-secondary)",
+                          fontSize: "0.8rem",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          transition: "all 0.3s ease",
+                          boxShadow: (jobViewMode[index] || 'full-time') === 'full-time' 
+                            ? "0 2px 8px rgba(124, 58, 237, 0.3)" 
+                            : "none"
+                        }}
+                      >
+                        💼 Full-Time
+                      </motion.button>
+                      <motion.button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setJobViewMode(prev => ({ ...prev, [index]: 'intern' }));
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        style={{
+                          padding: "0.5rem 1rem",
+                          background: jobViewMode[index] === 'intern' 
+                            ? "linear-gradient(135deg, #10b981 0%, #14b8a6 100%)" 
+                            : "transparent",
+                          border: "none",
+                          borderRadius: "7px",
+                          color: jobViewMode[index] === 'intern' ? "white" : "var(--text-secondary)",
+                          fontSize: "0.8rem",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          transition: "all 0.3s ease",
+                          boxShadow: jobViewMode[index] === 'intern' 
+                            ? "0 2px 8px rgba(16, 185, 129, 0.3)" 
+                            : "none"
+                        }}
+                      >
+                        🎓 Internship
+                      </motion.button>
                     </div>
                     
                     <h3 style={{
@@ -846,7 +1008,10 @@ const Home: NextPage = () => {
                               flexDirection: "column",
                               gap: "0.75rem"
                             }}>
-                              {job.responsibilities.map((responsibility, idx) => (
+                              {((jobViewMode[index] || 'full-time') === 'intern' 
+                                ? job.internResponsibilities 
+                                : job.responsibilities
+                              ).map((responsibility, idx) => (
                                 <motion.li
                                   key={idx}
                                   initial={{ opacity: 0, x: -20 }}
@@ -866,7 +1031,9 @@ const Home: NextPage = () => {
                                     top: "0.35rem",
                                     width: "6px",
                                     height: "6px",
-                                    background: "var(--primary-light)",
+                                    background: (jobViewMode[index] || 'full-time') === 'intern' 
+                                      ? "#10B981" 
+                                      : "var(--primary-light)",
                                     borderRadius: "50%"
                                   }} />
                                   {responsibility}
@@ -908,7 +1075,9 @@ const Home: NextPage = () => {
                                     lineHeight: 1.6,
                                     margin: 0
                                   }}>
-                                    {job.performanceExpectations}
+                                    {(jobViewMode[index] || 'full-time') === 'intern' 
+                                      ? job.internPerformanceExpectations 
+                                      : job.performanceExpectations}
                                   </p>
                                 </div>
                                 <div style={{
@@ -925,7 +1094,9 @@ const Home: NextPage = () => {
                                     lineHeight: 1.6,
                                     margin: 0
                                   }}>
-                                    <strong style={{ color: "var(--primary-light)" }}>Monthly benchmark:</strong> {job.monthlyGoal}
+                                    <strong style={{ color: "var(--primary-light)" }}>Monthly benchmark:</strong> {(jobViewMode[index] || 'full-time') === 'intern' 
+                                      ? job.internMonthlyGoal 
+                                      : job.monthlyGoal}
                                   </p>
                                 </div>
                               </div>
@@ -944,13 +1115,25 @@ const Home: NextPage = () => {
                       marginTop: "auto",
                       marginBottom: "1rem"
                     }}>
-                      <span style={{
-                        fontSize: "1rem",
-                        fontWeight: 600,
-                        color: "var(--primary-light)"
-                      }}>
-                        {job.salary}/month
-                      </span>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                        <span style={{
+                          fontSize: "1rem",
+                          fontWeight: 600,
+                          color: (jobViewMode[index] || 'full-time') === 'intern' ? "#10B981" : "var(--primary-light)"
+                        }}>
+                          {(jobViewMode[index] || 'full-time') === 'intern' 
+                            ? job.internSalary 
+                            : job.salary}/month
+                        </span>
+                        <span style={{
+                          fontSize: "0.75rem",
+                          color: "var(--text-muted)"
+                        }}>
+                          {(jobViewMode[index] || 'full-time') === 'intern' 
+                            ? "Internship Stipend" 
+                            : "Full-Time Salary"}
+                        </span>
+                      </div>
                     </div>
 
                     <div style={{

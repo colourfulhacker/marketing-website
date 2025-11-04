@@ -90,6 +90,20 @@ export default function Layout({ children }: LayoutProps) {
                   Careers
                 </Link>
                 <Link 
+                  href="/sales-guide" 
+                  style={{ 
+                    color: "rgba(255, 255, 255, 0.6)", 
+                    fontSize: "14px", 
+                    textDecoration: "none", 
+                    transition: "color 0.2s",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px"
+                  }}
+                >
+                  🎓 Sales Excellence Guide
+                </Link>
+                <Link 
                   href="/partner-program" 
                   style={{ 
                     color: "rgba(255, 255, 255, 0.6)", 

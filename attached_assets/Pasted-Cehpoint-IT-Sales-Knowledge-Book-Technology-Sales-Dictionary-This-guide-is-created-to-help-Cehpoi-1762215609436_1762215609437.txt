@@ -1,0 +1,51 @@
+Cehpoint IT Sales Knowledge Book – Technology Sales Dictionary
+This guide is created to help Cehpoint’s IT Sales Team understand the key technologies we use for modern web and application development. It explains each technology in simple terms, along with how it benefits our clients. The goal is to make every sales representative confident while discussing technical offerings with clients.
+Section 1: Modern Web Application Technologies
+Next.js
+What it is: Next.js is a modern web framework built on React that allows developers to create fast, SEO-friendly, and scalable web applications.
+Why we use it: For clients, it means faster loading websites, better search engine ranking, and future-ready technology that can handle high traffic smoothly.
+Vercel
+What it is: Vercel is a global cloud hosting platform built for deploying Next.js and modern web apps.
+Why we use it: We use it because it offers lifetime hosting with high performance, auto-scaling, and zero downtime — ensuring client applications run smoothly worldwide.
+Firebase
+What it is: Firebase is Google’s backend-as-a-service platform that offers authentication, database, hosting, and analytics tools.
+Why we use it: We use it for projects needing real-time data, user logins, and fast app deployment — perfect for startups and small business apps.
+Supabase
+What it is: Supabase is an open-source alternative to Firebase built on PostgreSQL.
+Why we use it: It offers secure authentication, real-time database, and storage — ideal for scalable web applications that need strong database performance.
+PostgreSQL
+What it is: PostgreSQL is an advanced open-source database system known for reliability and speed.
+Why we use it: It helps our clients manage structured data efficiently, ensuring apps handle thousands of users without slowdowns.
+JAMStack
+What it is: JAMStack stands for JavaScript, APIs, and Markup — a modern way to build fast and secure web apps.
+Why we use it: This approach allows us to deliver lightweight, globally distributed applications that load instantly and are easy to maintain.
+Section 2: Supporting IT & Cloud Technologies
+AWS, Azure, Google Cloud
+What it is: These are major cloud computing platforms that host, store, and scale business applications.
+Why we use it: We use them for enterprise clients who need global infrastructure, data backup, and reliability.
+Docker & DevOps
+What it is: Docker is used to package apps so they run consistently anywhere. DevOps ensures continuous integration and faster deployment.
+Why we use it: For clients, it means quicker project delivery, fewer errors, and smooth updates.
+APIs & Microservices
+What it is: APIs allow different systems to communicate. Microservices split large apps into smaller independent modules.
+Why we use it: This helps clients scale their apps easily and update specific features without downtime.
+Section 3: Cybersecurity in Development
+SSL & Encryption
+What it is: SSL certificates secure data transfer between users and websites.
+Why we use it: We ensure all client apps use SSL to protect sensitive data and build user trust.
+Firewalls & WAF
+What it is: Firewalls and Web Application Firewalls block unauthorized access and attacks.
+Why we use it: This gives clients peace of mind that their platforms are protected from common cyber threats.
+IAM & Access Control
+What it is: Identity and Access Management defines who can access what within a system.
+Why we use it: We implement these controls to ensure secure collaboration for clients with large teams.
+Section 4: Emerging Technologies
+Artificial Intelligence (AI)
+What it is: AI helps automate tasks, analyze data, and enhance decision-making.
+Why we use it: We integrate AI where clients need automation, insights, and intelligent user experiences.
+Blockchain
+What it is: Blockchain ensures secure, tamper-proof records of transactions.
+Why we use it: We explore blockchain for clients needing trust, transparency, and digital asset management.
+Internet of Things (IoT)
+What it is: IoT connects physical devices to the internet for data exchange and automation.
+Why we use it: We use it for industries like logistics, healthcare, and manufacturing to improve efficiency.

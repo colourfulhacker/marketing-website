@@ -20,10 +20,14 @@ export interface JobPosition {
   description: string;
   category: string;
   salary: string;
+  internSalary: string;
   badge: string | null;
   responsibilities: string[];
+  internResponsibilities: string[];
   servicesPromoted: string[];
   serviceDescription: string;
   performanceExpectations: string;
+  internPerformanceExpectations: string;
   monthlyGoal: string;
+  internMonthlyGoal: string;
 }
