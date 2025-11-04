@@ -671,6 +671,13 @@ const Questionnaire: NextPage = () => {
       return;
     }
 
+    // Check if user answered "No" to sales_guide_familiarity
+    if (question.id === "sales_guide_familiarity" && answer === "No") {
+      // Redirect to sales guide with a message
+      router.push('/sales-guide?from=questionnaire&job=' + encodeURIComponent(job as string) + '&type=' + applicationType);
+      return;
+    }
+
     if (currentQuestion < questions.length - 1) {
       setDirection(1);
       setTimeout(() => {
@@ -684,6 +691,12 @@ const Questionnaire: NextPage = () => {
       if (score >= 70) {
         completeQuestionnaire(newAnswers);
       } else if (score >= 40) {
+        // Validate before showing probation screen
+        if (!validateForm(newAnswers)) {
+          // Scroll to top to show errors
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
         setTimeout(() => {
           setIsProbation(true);
         }, 300);

@@ -1215,6 +1215,139 @@ const Home: NextPage = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Global Presence Section */}
+        <section style={{
+          padding: "6rem 0",
+          position: "relative",
+          background: "linear-gradient(180deg, rgba(15, 15, 25, 0.5) 0%, rgba(10, 10, 15, 0.8) 100%)"
+        }}>
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              style={{ textAlign: "center", marginBottom: "4rem" }}
+            >
+              <h2 className="display-font gradient-text" style={{
+                fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                fontWeight: 700,
+                marginBottom: "1rem",
+                letterSpacing: "-0.02em"
+              }}>
+                Our Global Presence
+              </h2>
+              <p style={{
+                fontSize: "clamp(1rem, 2vw, 1.2rem)",
+                color: "var(--text-secondary)",
+                maxWidth: "700px",
+                margin: "0 auto"
+              }}>
+                Serving clients worldwide from strategic locations across the globe
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 350px), 1fr))",
+                gap: "2rem"
+              }}
+            >
+              {[
+                {
+                  flag: "🇺🇸",
+                  country: "United States",
+                  address: "5 Penn Plaza, 14th Floor",
+                  city: "New York, NY 10001",
+                  countryName: "US"
+                },
+                {
+                  flag: "🇬🇧",
+                  country: "United Kingdom",
+                  address: "12 Steward Street, The Steward Building",
+                  city: "London, E1 6FQ",
+                  countryName: "Great Britain"
+                },
+                {
+                  flag: "🇩🇪",
+                  country: "Germany",
+                  address: "Banking Circle S.A. - German Branch",
+                  city: "Maximilianstraße 54, 80538 München"
+                },
+                {
+                  flag: "🇦🇺",
+                  country: "Australia",
+                  address: "Level 11/10 Carrington St",
+                  city: "Sydney NSW 2000"
+                },
+                {
+                  flag: "🇨🇦",
+                  country: "Canada",
+                  address: "736 Meridian Road N.E",
+                  city: "Calgary, Alberta"
+                },
+                {
+                  flag: "🇮🇳",
+                  country: "India",
+                  address: "Cehpoint, Labpur, Sandipan Patsala Para",
+                  city: "Birbhum, Bolpur, West Bengal - 731303"
+                }
+              ].map((location, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="card"
+                  whileHover={{ y: -5 }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(23, 23, 35, 0.8) 0%, rgba(30, 30, 45, 0.7) 100%)",
+                    backdropFilter: "blur(20px)",
+                    padding: "2rem",
+                    borderRadius: "16px",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  <div style={{
+                    fontSize: "3rem",
+                    marginBottom: "1rem",
+                    textAlign: "center"
+                  }}>
+                    {location.flag}
+                  </div>
+                  <h3 style={{
+                    fontSize: "1.5rem",
+                    fontWeight: 700,
+                    color: "var(--text)",
+                    marginBottom: "1rem",
+                    textAlign: "center"
+                  }}>
+                    {location.country}
+                  </h3>
+                  <div style={{
+                    fontSize: "0.95rem",
+                    color: "var(--text-secondary)",
+                    lineHeight: 1.7,
+                    textAlign: "center"
+                  }}>
+                    <p style={{ margin: "0.5rem 0" }}>{location.address}</p>
+                    <p style={{ margin: "0.5rem 0", color: "var(--text-muted)" }}>{location.city}</p>
+                    {location.countryName && (
+                      <p style={{ margin: "0.5rem 0", fontSize: "0.85rem", color: "var(--primary-light)" }}>
+                        {location.countryName}
+                      </p>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
       </main>
     </div>
     </Layout>

@@ -8,6 +8,8 @@ import Layout from "../components/Layout";
 const SalesGuide: NextPage = () => {
   const router = useRouter();
   const [expandedSection, setExpandedSection] = useState<number | null>(0);
+  const { from, job, type } = router.query;
+  const fromQuestionnaire = from === 'questionnaire';
 
   const sections = [
     {
@@ -184,6 +186,72 @@ const SalesGuide: NextPage = () => {
 
         <main style={{ padding: "6rem 0" }}>
           <div className="container">
+            {fromQuestionnaire && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                style={{
+                  background: "linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%)",
+                  border: "2px solid rgba(236, 72, 153, 0.3)",
+                  borderRadius: "16px",
+                  padding: "2rem",
+                  marginBottom: "3rem",
+                  textAlign: "center"
+                }}
+              >
+                <h2 style={{
+                  fontSize: "1.75rem",
+                  fontWeight: 700,
+                  color: "var(--text)",
+                  marginBottom: "1rem"
+                }}>
+                  📚 Please Read This Guide First
+                </h2>
+                <p style={{
+                  fontSize: "1.1rem",
+                  color: "var(--text-secondary)",
+                  marginBottom: "1.5rem",
+                  lineHeight: 1.7
+                }}>
+                  Before you can apply for the <strong>{job}</strong> position, we need you to understand the technologies and sales strategies we use at Cehpoint. Please read through this guide carefully.
+                </p>
+                <p style={{
+                  fontSize: "1rem",
+                  color: "var(--text-muted)",
+                  marginBottom: "1.5rem"
+                }}>
+                  After reading, you can test your knowledge with our quiz or continue with your application.
+                </p>
+                <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+                  <motion.button
+                    onClick={() => router.push(`/quiz/${type === 'internship' ? 'intern' : 'employee'}?job=${encodeURIComponent(job as string)}&type=${type}`)}
+                    className="btn btn-primary"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                      padding: "0.875rem 1.75rem",
+                      fontSize: "1rem"
+                    }}
+                  >
+                    Take Knowledge Quiz →
+                  </motion.button>
+                  <motion.button
+                    onClick={() => router.push(`/questionnaire?job=${encodeURIComponent(job as string)}&type=${type}`)}
+                    className="btn btn-secondary"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                      padding: "0.875rem 1.75rem",
+                      fontSize: "1rem"
+                    }}
+                  >
+                    Continue Application
+                  </motion.button>
+                </div>
+              </motion.div>
+            )}
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
