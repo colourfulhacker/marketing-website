@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,6 +12,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <ThemeToggle />
       <main style={{ flex: 1 }}>
         {children}
       </main>

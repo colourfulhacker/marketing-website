@@ -601,6 +601,126 @@ const positionQuestions: Record<string, Question[]> = {
       type: "text",
       scoreWeight: 0
     }
+  ],
+  "Partner Program": [
+    {
+      id: "purpose",
+      question: "What do you come here to sell?",
+      type: "select",
+      options: [
+        "I come here to sell products and services to clients",
+        "I come here to sell my time to the company"
+      ],
+      scoreWeight: 0
+    },
+    {
+      id: "partnership_understanding",
+      question: "Do you understand that as a Cehpoint Consultant, you will be selling Cehpoint's IT/tech services to clients and earning commissions/profit share based on successful deals?",
+      type: "yes-no",
+      scoreWeight: 1
+    },
+    {
+      id: "partnership_model",
+      question: "Which partnership model interests you the most?",
+      type: "select",
+      options: [
+        "Freelancer (₹1,000/project, 10-15 hrs/week, flexible)",
+        "Commission-Based Agent (15-25% commission, 20-30 hrs/week, targets)",
+        "Sales Partner (Up to 20% profit share, full-time, bulk deals)"
+      ],
+      scoreWeight: 0
+    },
+    {
+      id: "sales_guide_familiarity",
+      question: "Have you reviewed our Sales Excellence Guide to understand the 10 core services we offer?",
+      type: "yes-no",
+      scoreWeight: 2
+    },
+    {
+      id: "b2b_sales_experience",
+      question: "Do you have proven experience in B2B sales or business development?",
+      type: "yes-no",
+      scoreWeight: 3
+    },
+    {
+      id: "client_network",
+      question: "Do you have an existing network of potential clients or decision-makers in businesses?",
+      type: "yes-no",
+      scoreWeight: 3
+    },
+    {
+      id: "tech_services_knowledge",
+      question: "Are you familiar with selling IT services, cybersecurity solutions, or digital transformation services?",
+      type: "yes-no",
+      scoreWeight: 2
+    },
+    {
+      id: "sales_track_record",
+      question: "Can you consistently identify prospects, pitch effectively, handle objections, and close deals?",
+      type: "yes-no",
+      scoreWeight: 3
+    },
+    {
+      id: "partner_experience",
+      question: "How many years of sales/business development experience do you have?",
+      type: "experience",
+      options: ["0-1 years", "1-3 years", "3-5 years", "5+ years"],
+      scoreWeight: 3
+    },
+    {
+      id: "deal_closure_capacity",
+      question: "What is the typical deal size you have closed successfully?",
+      type: "select",
+      options: [
+        "New to sales / Haven't closed deals yet",
+        "₹50K - ₹2L (Small projects)",
+        "₹2L - ₹5L (Medium projects)",
+        "₹5L - ₹10L (Large contracts)",
+        "₹10L+ (Enterprise deals)"
+      ],
+      scoreWeight: 3
+    },
+    {
+      id: "weekly_availability",
+      question: "How many hours per week can you dedicate to selling Cehpoint services?",
+      type: "select",
+      options: [
+        "10-15 hours/week (Part-time Freelancer)",
+        "20-30 hours/week (Dedicated Agent)",
+        "40+ hours/week (Full-time Sales Partner)"
+      ],
+      scoreWeight: 2
+    },
+    {
+      id: "training_commitment",
+      question: "Can you complete a 3-hour training program and start selling the same day?",
+      type: "yes-no",
+      scoreWeight: 2
+    },
+    {
+      id: "success_story",
+      question: "Describe your most successful sales achievement - the client, deal size, and how you closed it.",
+      type: "text",
+      scoreWeight: 0
+    },
+    {
+      id: "name",
+      question: "What is your full name?",
+      type: "text",
+      scoreWeight: 0
+    },
+    {
+      id: "email",
+      question: "What is your email address?",
+      type: "text",
+      scoreWeight: 0
+    },
+    {
+      id: "phone",
+      question: "What is your phone number?",
+      type: "text",
+      scoreWeight: 0
+    }
   ]
 };
 

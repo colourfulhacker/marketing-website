@@ -1,0 +1,93 @@
+framework-b8ed9b642a1d405a.js:1  ReferenceError: Cannot access 'w' before initialization
+    at salary-calculator-84b4388d83bcbcfd.js:9:7112
+    at u (salary-calculator-84b4388d83bcbcfd.js:9:7318)
+    at lb (framework-b8ed9b642a1d405a.js:1:48979)
+    at aY (framework-b8ed9b642a1d405a.js:1:68696)
+    at ot (framework-b8ed9b642a1d405a.js:1:80112)
+    at ua (framework-b8ed9b642a1d405a.js:1:119201)
+    at framework-b8ed9b642a1d405a.js:1:119046
+    at ul (framework-b8ed9b642a1d405a.js:1:119054)
+    at i3 (framework-b8ed9b642a1d405a.js:1:116224)
+    at uT (framework-b8ed9b642a1d405a.js:1:136027)
+aR @ framework-b8ed9b642a1d405a.js:1
+aD @ framework-b8ed9b642a1d405a.js:1
+o.componentDidCatch.e.callback @ framework-b8ed9b642a1d405a.js:1
+oC @ framework-b8ed9b642a1d405a.js:1
+o_ @ framework-b8ed9b642a1d405a.js:1
+oN @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+(anonymous) @ framework-b8ed9b642a1d405a.js:1
+uc @ framework-b8ed9b642a1d405a.js:1
+i6 @ framework-b8ed9b642a1d405a.js:1
+i3 @ framework-b8ed9b642a1d405a.js:1
+uT @ framework-b8ed9b642a1d405a.js:1
+z @ framework-b8ed9b642a1d405a.js:1
+main-03460794edd375b3.js:1  ReferenceError: Cannot access 'w' before initialization
+    at salary-calculator-84b4388d83bcbcfd.js:9:7112
+    at u (salary-calculator-84b4388d83bcbcfd.js:9:7318)
+    at lb (framework-b8ed9b642a1d405a.js:1:48979)
+    at aY (framework-b8ed9b642a1d405a.js:1:68696)
+    at ot (framework-b8ed9b642a1d405a.js:1:80112)
+    at ua (framework-b8ed9b642a1d405a.js:1:119201)
+    at framework-b8ed9b642a1d405a.js:1:119046
+    at ul (framework-b8ed9b642a1d405a.js:1:119054)
+    at i3 (framework-b8ed9b642a1d405a.js:1:116224)
+    at uT (framework-b8ed9b642a1d405a.js:1:136027)
+$ @ main-03460794edd375b3.js:1
+fn @ main-03460794edd375b3.js:1
+componentDidCatch @ main-03460794edd375b3.js:1
+o.componentDidCatch.e.callback @ framework-b8ed9b642a1d405a.js:1
+oC @ framework-b8ed9b642a1d405a.js:1
+o_ @ framework-b8ed9b642a1d405a.js:1
+oN @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+(anonymous) @ framework-b8ed9b642a1d405a.js:1
+uc @ framework-b8ed9b642a1d405a.js:1
+i6 @ framework-b8ed9b642a1d405a.js:1
+i3 @ framework-b8ed9b642a1d405a.js:1
+uT @ framework-b8ed9b642a1d405a.js:1
+z @ framework-b8ed9b642a1d405a.js:1
+main-03460794edd375b3.js:1  A client-side exception has occurred, see here for more info: https://nextjs.org/docs/messages/client-side-exception-occurred
+$ @ main-03460794edd375b3.js:1
+fn @ main-03460794edd375b3.js:1
+componentDidCatch @ main-03460794edd375b3.js:1
+o.componentDidCatch.e.callback @ framework-b8ed9b642a1d405a.js:1
+oC @ framework-b8ed9b642a1d405a.js:1
+o_ @ framework-b8ed9b642a1d405a.js:1
+oN @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+o1 @ framework-b8ed9b642a1d405a.js:1
+oB @ framework-b8ed9b642a1d405a.js:1
+(anonymous) @ framework-b8ed9b642a1d405a.js:1
+uc @ framework-b8ed9b642a1d405a.js:1
+i6 @ framework-b8ed9b642a1d405a.js:1
+i3 @ framework-b8ed9b642a1d405a.js:1
+uT @ framework-b8ed9b642a1d405a.js:1
+z @ framework-b8ed9b642a1d405a.js:1
+[NEW] Explain Console errors by using Copilot in Edge: click
+         
+         to explain an error. 
+        Learn more
+        Don't show again

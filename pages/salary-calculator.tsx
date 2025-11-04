@@ -147,11 +147,15 @@ const SalaryCalculator: NextPage = () => {
   const calculateSalary = () => {
     let baseSalary = 30000;
     let multiplier = 1.0;
+    let isInternship = false;
+    let stipend = 0;
 
     // Check for zero experience for internship
     const expLevel = answers.experience_level;
     if (expLevel?.includes("0-1 years")) {
-      return { estimatedSalary: 0, minRange: 0, maxRange: 0, isInternship: true, stipend: 5000 };
+      isInternship = true;
+      stipend = 5000;
+      return { estimatedSalary: 0, minRange: 0, maxRange: 0, isInternship, stipend };
     }
 
     // Experience Level Impact (30% weight)
