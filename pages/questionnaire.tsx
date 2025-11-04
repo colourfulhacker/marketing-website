@@ -867,9 +867,19 @@ const Questionnaire: NextPage = () => {
   };
 
   const completeQuestionnaire = async (finalAnswers: Record<string, any>) => {
-    if (!validateForm(finalAnswers)) {
+    const isPartnerProgram = (job as string) === "Partner Program";
+    
+    if (!isPartnerProgram && !validateForm(finalAnswers)) {
       return;
     }
+    
+    if (isPartnerProgram) {
+      if (!finalAnswers.name || !finalAnswers.email || !finalAnswers.phone) {
+        alert("Please provide your name, email, and phone number.");
+        return;
+      }
+    }
+    
     const applicationData = {
       job: job as string,
       applicationType: applicationType,
@@ -895,7 +905,28 @@ const Questionnaire: NextPage = () => {
       console.error('Failed to send application data to WhatsApp system:', error);
     }
     
-    const message = `*New ${isInternship ? 'Internship' : 'Job'} Application - Cehpoint*
+    let message = '';
+    let partnershipType = '';
+    
+    if (isPartnerProgram) {
+      const selectedPartnership = finalAnswers.partnership_model || "Partner";
+      partnershipType = selectedPartnership;
+      
+      message = `*New Partner Program Application - Cehpoint*
+
+*Partnership Type:* ${selectedPartnership}
+*Name:* ${finalAnswers.name}
+*Email:* ${finalAnswers.email}
+*Phone:* ${finalAnswers.phone}
+*Weekly Availability:* ${finalAnswers.weekly_availability || 'Not specified'}
+
+---
+*Application Data (DO NOT MODIFY):*
+${base64Data}`;
+
+      router.push(`/screening?partnershipType=${encodeURIComponent(selectedPartnership)}&message=${encodeURIComponent(message)}`);
+    } else {
+      message = `*New ${isInternship ? 'Internship' : 'Job'} Application - Cehpoint*
 
 *Position:* ${job} (${isInternship ? 'Internship' : 'Full-Time'})
 *Name:* ${finalAnswers.name}
@@ -907,7 +938,8 @@ const Questionnaire: NextPage = () => {
 *Application Data (DO NOT MODIFY):*
 ${base64Data}`;
 
-    router.push(`/confirmation?message=${encodeURIComponent(message)}`);
+      router.push(`/screening?position=${encodeURIComponent(job as string)}&isInternship=${isInternship}&message=${encodeURIComponent(message)}`);
+    }
   };
 
   const acceptProbation = () => {
@@ -940,7 +972,7 @@ The candidate has moderate qualifications and has accepted the 15-day unpaid pro
 *Application Data:*
 ${base64Data}`;
 
-    router.push(`/confirmation?message=${encodeURIComponent(message)}`);
+    router.push(`/screening?position=${encodeURIComponent(job as string)}&isInternship=${isInternship}&message=${encodeURIComponent(message)}`);
   };
 
   const variants = {

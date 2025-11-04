@@ -18,10 +18,8 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       <footer
+        className="site-footer"
         style={{
-          background: "linear-gradient(180deg, rgba(15, 15, 20, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%)",
-          backdropFilter: "blur(20px)",
-          borderTop: "1px solid rgba(124, 58, 237, 0.2)",
           padding: "60px 20px 30px",
           marginTop: "auto"
         }}
@@ -49,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
               >
                 Cehpoint
               </h3>
-              <p style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "14px", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--text-secondary)", fontSize: "14px", lineHeight: "1.6" }}>
                 Empowering professionals to transform their careers through innovation, 
                 results-driven performance, and genuine value creation.
               </p>
@@ -81,20 +79,20 @@ export default function Layout({ children }: LayoutProps) {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: "16px",
                   fontWeight: "600",
-                  color: "#fff",
+                  color: "var(--text)",
                   marginBottom: "20px"
                 }}
               >
                 Quick Links
               </h4>
               <nav style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                <Link href="/" style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
+                <Link href="/" style={{ color: "var(--text-secondary)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
                   Careers
                 </Link>
                 <Link 
                   href="/sales-guide" 
                   style={{ 
-                    color: "rgba(255, 255, 255, 0.6)", 
+                    color: "var(--text-secondary)", 
                     fontSize: "14px", 
                     textDecoration: "none", 
                     transition: "color 0.2s",
@@ -108,7 +106,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Link 
                   href="/partner-program" 
                   style={{ 
-                    color: "rgba(255, 255, 255, 0.6)", 
+                    color: "var(--text-secondary)", 
                     fontSize: "14px", 
                     textDecoration: "none", 
                     transition: "color 0.2s",
@@ -129,7 +127,7 @@ export default function Layout({ children }: LayoutProps) {
                     NEW
                   </span>
                 </Link>
-                <Link href="/salary-calculator" style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
+                <Link href="/salary-calculator" style={{ color: "var(--text-secondary)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
                   Salary Calculator
                 </Link>
                 <a 
@@ -137,7 +135,7 @@ export default function Layout({ children }: LayoutProps) {
                   target="_blank" 
                   rel="noopener noreferrer"
                   style={{ 
-                    color: "rgba(255, 255, 255, 0.6)", 
+                    color: "var(--text-secondary)", 
                     fontSize: "14px", 
                     textDecoration: "none", 
                     transition: "color 0.2s",
@@ -151,10 +149,10 @@ export default function Layout({ children }: LayoutProps) {
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </a>
-                <Link href="/privacy-policy" style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
+                <Link href="/privacy-policy" style={{ color: "var(--text-secondary)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
                   Privacy Policy
                 </Link>
-                <Link href="/terms" style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
+                <Link href="/terms" style={{ color: "var(--text-secondary)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}>
                   Terms & Conditions
                 </Link>
               </nav>
@@ -166,7 +164,7 @@ export default function Layout({ children }: LayoutProps) {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: "16px",
                   fontWeight: "600",
-                  color: "#fff",
+                  color: "var(--text)",
                   marginBottom: "20px"
                 }}
               >
@@ -178,7 +176,7 @@ export default function Layout({ children }: LayoutProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: "rgba(255, 255, 255, 0.6)",
+                    color: "var(--text-secondary)",
                     fontSize: "14px",
                     textDecoration: "none",
                     display: "flex",
@@ -191,7 +189,7 @@ export default function Layout({ children }: LayoutProps) {
                   </svg>
                   WhatsApp
                 </a>
-                <p style={{ color: "rgba(255, 255, 255, 0.4)", fontSize: "12px", margin: 0 }}>
+                <p style={{ color: "var(--text-muted)", fontSize: "12px", margin: 0 }}>
                   📍 West Bengal, India
                 </p>
               </div>
@@ -203,13 +201,13 @@ export default function Layout({ children }: LayoutProps) {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: "16px",
                   fontWeight: "600",
-                  color: "#fff",
+                  color: "var(--text)",
                   marginBottom: "20px"
                 }}
               >
                 Our Mission
               </h4>
-              <p style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "13px", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--text-secondary)", fontSize: "13px", lineHeight: "1.6" }}>
                 We believe in results over hours. Join a team that values 
                 <strong style={{ color: "#7C3AED" }}> value creation</strong> and 
                 <strong style={{ color: "#EC4899" }}> entrepreneurial spirit</strong>.
@@ -219,7 +217,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div
             style={{
-              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+              borderTop: "1px solid rgba(124, 58, 237, 0.15)",
               paddingTop: "30px",
               display: "flex",
               flexWrap: "wrap",
@@ -228,14 +226,14 @@ export default function Layout({ children }: LayoutProps) {
               gap: "20px"
             }}
           >
-            <p style={{ color: "rgba(255, 255, 255, 0.4)", fontSize: "13px", margin: 0 }}>
+            <p style={{ color: "var(--text-muted)", fontSize: "13px", margin: 0 }}>
               © {currentYear} Cehpoint. All rights reserved.
             </p>
             <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
               <span
                 style={{
                   fontSize: "11px",
-                  color: "rgba(255, 255, 255, 0.3)",
+                  color: "var(--text-muted)",
                   padding: "6px 12px",
                   background: "rgba(124, 58, 237, 0.1)",
                   borderRadius: "6px",
@@ -247,7 +245,7 @@ export default function Layout({ children }: LayoutProps) {
               <span
                 style={{
                   fontSize: "11px",
-                  color: "rgba(255, 255, 255, 0.3)",
+                  color: "var(--text-muted)",
                   padding: "6px 12px",
                   background: "rgba(16, 185, 129, 0.1)",
                   borderRadius: "6px",
